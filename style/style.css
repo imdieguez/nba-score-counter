@@ -1,0 +1,92 @@
+body {
+    font-family: 'Graduate', cursive;
+    background: url('../img/basketball-background.png');
+    color: white;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 30px
+}
+
+.local {
+    font-size: 1.3rem;
+    margin-top: 5px;
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teams {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.teams > img {
+    width: 40%;
+    margin: 30px;
+}
+
+.teams > h2 {
+    font-size: 2.5rem;
+}
+
+.teams .score1 {
+    font-size: 3rem;
+}
+
+.teams .score2 {
+    font-size: 3rem;
+}
+
+button {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: none;
+    color: white;
+    margin-top: 20px;
+}
+
+.one-point-left-btn, .one-point-right-btn {
+    background-color: rgb(29, 126, 61);
+}
+
+.two-point-left-btn, .two-point-right-btn {
+    background-color: rgb(35, 77, 141);
+    margin-left: 15px;
+}
+
+.three-point-left-btn, .three-point-right-btn {
+    background-color: rgb(167, 11, 11);
+    margin-left: 15px;
+}
+
+.one-point-left-btn:hover, .one-point-right-btn:hover {
+    background-color: rgb(59, 163, 93);
+}
+
+.two-point-left-btn:hover, .two-point-right-btn:hover {
+    background-color: rgb(58, 104, 173);
+}
+
+.three-point-left-btn:hover, .three-point-right-btn:hover {
+    background-color: rgb(192, 44, 44);
+}
+
+.one-point-left-btn:active, .one-point-right-btn:active {
+    background-color: rgb(29, 126, 61);
+}
+
+.two-point-left-btn:active, .two-point-right-btn:active {
+    background-color: rgb(35, 77, 141);
+}
+
+.three-point-left-btn:active, .three-point-right-btn:active {
+    background-color: rgb(167, 11, 11);
+}
