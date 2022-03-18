@@ -90,3 +90,22 @@ button {
 .three-point-left-btn:active, .three-point-right-btn:active {
     background-color: rgb(167, 11, 11);
 }
+
+#reset-btn {
+    margin: 0 auto;
+    display: block;
+    background-color: darkgray;
+    padding: 10px 40px;
+    border: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+#reset-btn:hover {
+    background-color: rgb(194, 194, 194);
+}
+
+#reset-btn:active {
+    background-color: darkgray;
+
+}
