@@ -19,9 +19,19 @@
     <h1>NBA Score</h1>
     <div class="score-container">
         <div class="teams">
-            <h2>Los Angeles Lakers</h2>
+            <div class="team-select">
+                <label for="team-list">Team select:</label>
+                <select id="home-team-list" for="team-list">
+                    <option value="los-angeles-lakers" selected>Los Angeles Lakers</option>
+                    <option value="boston-celtics">Boston Celtics</option>
+                    <option value="chicago-bulls">Chicago Bulls</option>
+                    <option value="golgen-state-warriors">Golden State Warriors</option>
+                    <option value="san-antonio-spurs">San Antonio Spurs</option>
+                </select>
+            </div>  
+            <h2 id="home-team-name">Los Angeles Lakers</h2>
             <span class="local">(Home)</span>
-            <img src="img/lakers.png" alt="">
+            <img id="home-team-logo" src="img/lakers.png" alt="">
             <span class="score1">0</span>
             <div class="buttons">
                 <button class="one-point-left-btn"  type="submit">1pt</button>
@@ -30,9 +40,19 @@
             </div>
         </div>
         <div class="teams">
-            <h2>San Antonio Spurs</h2>
+            <div class="team-select">
+                <label for="team-list">Team select:</label>
+                <select id="visitor-team-list" for="team-list">
+                    <option value="los-angeles-lakers">Los Angeles Lakers</option>
+                    <option value="boston-celtics">Boston Celtics</option>
+                    <option value="chicago-bulls">Chicago Bulls</option>
+                    <option value="golgen-state-warriors">Golden State Warriors</option>
+                    <option value="san-antonio-spurs" selected>San Antonio Spurs</option>
+                </select>
+            </div>
+            <h2 id="visitor-team-name">San Antonio Spurs</h2>
             <span class="local">(Visitor)</span>
-            <img src="img/spurs.png" alt="">
+            <img id="visitor-team-logo"src="img/spurs.png" alt="">
             <span class="score2">0</span>
             <div class="buttons">
                 <button class="one-point-right-btn" type="submit">1pt</button>
