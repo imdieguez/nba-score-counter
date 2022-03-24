@@ -31,43 +31,13 @@ let visitorTeamLogo = document.querySelector('#visitor-team-logo')
 
 //Display of select home name teams in the title and change de logo
 homeTeamList.addEventListener('change', function() {
-    if(homeTeamList.options[homeTeamList.selectedIndex].text == 'Chicago Bulls') {
-        homeTeamName.textContent = homeTeamList.options[homeTeamList.selectedIndex].text;
-        homeTeamLogo.src = 'img/bulls.png';
-    }else if(homeTeamList.options[homeTeamList.selectedIndex].text == 'Boston Celtics') {
-        homeTeamName.textContent = homeTeamList.options[homeTeamList.selectedIndex].text;
-        homeTeamLogo.src = 'img/celtics.png';
-    }else if(homeTeamList.options[homeTeamList.selectedIndex].text == 'Golden State Warriors') {
-        homeTeamName.textContent = homeTeamList.options[homeTeamList.selectedIndex].text;
-        homeTeamLogo.src = 'img/warriors.png';
-    }else if(homeTeamList.options[homeTeamList.selectedIndex].text == 'Los Angeles Lakers') {
-        homeTeamName.textContent = homeTeamList.options[homeTeamList.selectedIndex].text;
-        homeTeamLogo.src = 'img/lakers.png';
-    }else{
-        homeTeamName.textContent = homeTeamList.options[homeTeamList.selectedIndex].text;
-        homeTeamLogo.src = 'img/spurs.png';
-    }
+    homeTeamDisplay()
     resetScore()
 })
 
 //Display of select visitor name teams in the title and change de logo
 visitorTeamList.addEventListener('change', function() {
-    if(visitorTeamList.options[visitorTeamList.selectedIndex].text == 'Chicago Bulls') {
-        visitorTeamName.textContent = visitorTeamList.options[visitorTeamList.selectedIndex].text;
-        visitorTeamLogo.src = 'img/bulls.png';
-    }else if(visitorTeamList.options[visitorTeamList.selectedIndex].text == 'Boston Celtics') {
-        visitorTeamName.textContent = visitorTeamList.options[visitorTeamList.selectedIndex].text;
-        visitorTeamLogo.src = 'img/celtics.png';
-    }else if(visitorTeamList.options[visitorTeamList.selectedIndex].text == 'Golden State Warriors') {
-        visitorTeamName.textContent = visitorTeamList.options[visitorTeamList.selectedIndex].text;
-        visitorTeamLogo.src = 'img/warriors.png';
-    }else if(visitorTeamList.options[visitorTeamList.selectedIndex].text == 'San Antonio Spurs') {
-        visitorTeamName.textContent = visitorTeamList.options[visitorTeamList.selectedIndex].text;
-        visitorTeamLogo.src = 'img/spurs.png';
-    }else{
-        visitorTeamName.textContent = visitorTeamList.options[visitorTeamList.selectedIndex].text;
-        visitorTeamLogo.src = 'img/lakers.png';
-    }
+    visitorTeamDisplay()
     resetScore()
 })
 
@@ -75,79 +45,37 @@ visitorTeamList.addEventListener('change', function() {
 onePointLeftBtn.addEventListener('click', function() {
     countLeft += 1;
     score1.textContent = countLeft;
-    if(countLeft > countRight) {
-        score1.style.color = '#7af486';
-    }else if(countLeft == countRight) {
-        score1.style.color = 'white';
-        score2.style.color = 'white';
-    }else{
-        score2.style.color = '#7af486';
-    }
+    leftWinning()
 })
 
 twoPointLeftBtn.addEventListener('click', function() {
     countLeft += 2;
     score1.textContent = countLeft;
-    if(countLeft > countRight) {
-        score1.style.color = '#7af486';
-    }else if(countLeft == countRight) {
-        score1.style.color = 'white';
-        score2.style.color = 'white';
-    }else{
-        score2.style.color = '#7af486';
-    }
+    leftWinning()
 })
 
 threePointLeftBtn.addEventListener('click', function() {
     countLeft += 3;
     score1.textContent = countLeft;
-    if(countLeft > countRight) {
-        score1.style.color = '#7af486';
-    }else if(countLeft == countRight) {
-        score1.style.color = 'white';
-        score2.style.color = 'white';
-    }else{
-        score2.style.color = '#7af486';
-    }
+    leftWinning()
 })
 
 onePointRightBtn.addEventListener('click', function() {
     countRight += 1;
     score2.textContent = countRight;
-    if(countLeft < countRight) {
-        score2.style.color = '#7af486';
-    }else if(countLeft == countRight) {
-        score1.style.color = 'white';
-        score2.style.color = 'white';
-    }else{
-        score1.style.color = '#7af486';
-    }
+    rightWinning()
 })
 
 twoPointRightBtn.addEventListener('click', function() {
     countRight += 2;
     score2.textContent = countRight;
-    if(countLeft < countRight) {
-        score2.style.color = '#7af486';
-    }else if(countLeft == countRight) {
-        score1.style.color = 'white';
-        score2.style.color = 'white';
-    }else{
-        score1.style.color = '#7af486';
-    }
+    rightWinning()
 })
 
 threePointRightBtn.addEventListener('click', function() {
     countRight += 3;
     score2.textContent = countRight;
-    if(countLeft < countRight) {
-        score2.style.color = '#7af486';
-    }else if(countLeft == countRight) {
-        score1.style.color = 'white';
-        score2.style.color = 'white';
-    }else{
-        score1.style.color = '#7af486';
-    }
+    rightWinning()
 })
 
 //Reset the counter
@@ -164,4 +92,64 @@ function resetScore() {
     score2.textContent = 0;
     score1.style.color = 'white';
     score2.style.color = 'white';
+}
+
+function leftWinning() {
+    if(countLeft > countRight) {
+        score1.style.color = '#7af486';
+    }else if(countLeft == countRight) {
+        score1.style.color = 'white';
+        score2.style.color = 'white';
+    }else{
+        score2.style.color = '#7af486';
+    }
+}
+
+function rightWinning() {
+    if(countLeft < countRight) {
+        score2.style.color = '#7af486';
+    }else if(countLeft == countRight) {
+        score1.style.color = 'white';
+        score2.style.color = 'white';
+    }else{
+        score1.style.color = '#7af486';
+    }
+}
+
+function homeTeamDisplay() {
+    if(homeTeamList.options[homeTeamList.selectedIndex].text == 'Chicago Bulls') {
+        homeTeamName.textContent = homeTeamList.options[homeTeamList.selectedIndex].text;
+        homeTeamLogo.src = 'img/bulls.png';
+    }else if(homeTeamList.options[homeTeamList.selectedIndex].text == 'Boston Celtics') {
+        homeTeamName.textContent = homeTeamList.options[homeTeamList.selectedIndex].text;
+        homeTeamLogo.src = 'img/celtics.png';
+    }else if(homeTeamList.options[homeTeamList.selectedIndex].text == 'Golden State Warriors') {
+        homeTeamName.textContent = homeTeamList.options[homeTeamList.selectedIndex].text;
+        homeTeamLogo.src = 'img/warriors.png';
+    }else if(homeTeamList.options[homeTeamList.selectedIndex].text == 'Los Angeles Lakers') {
+        homeTeamName.textContent = homeTeamList.options[homeTeamList.selectedIndex].text;
+        homeTeamLogo.src = 'img/lakers.png';
+    }else{
+        homeTeamName.textContent = homeTeamList.options[homeTeamList.selectedIndex].text;
+        homeTeamLogo.src = 'img/spurs.png';
+    }
+}
+
+function visitorTeamDisplay() {
+    if(visitorTeamList.options[visitorTeamList.selectedIndex].text == 'Chicago Bulls') {
+        visitorTeamName.textContent = visitorTeamList.options[visitorTeamList.selectedIndex].text;
+        visitorTeamLogo.src = 'img/bulls.png';
+    }else if(visitorTeamList.options[visitorTeamList.selectedIndex].text == 'Boston Celtics') {
+        visitorTeamName.textContent = visitorTeamList.options[visitorTeamList.selectedIndex].text;
+        visitorTeamLogo.src = 'img/celtics.png';
+    }else if(visitorTeamList.options[visitorTeamList.selectedIndex].text == 'Golden State Warriors') {
+        visitorTeamName.textContent = visitorTeamList.options[visitorTeamList.selectedIndex].text;
+        visitorTeamLogo.src = 'img/warriors.png';
+    }else if(visitorTeamList.options[visitorTeamList.selectedIndex].text == 'San Antonio Spurs') {
+        visitorTeamName.textContent = visitorTeamList.options[visitorTeamList.selectedIndex].text;
+        visitorTeamLogo.src = 'img/spurs.png';
+    }else{
+        visitorTeamName.textContent = visitorTeamList.options[visitorTeamList.selectedIndex].text;
+        visitorTeamLogo.src = 'img/lakers.png';
+    }
 }
