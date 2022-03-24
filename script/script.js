@@ -75,31 +75,79 @@ visitorTeamList.addEventListener('change', function() {
 onePointLeftBtn.addEventListener('click', function() {
     countLeft += 1;
     score1.textContent = countLeft;
+    if(countLeft > countRight) {
+        score1.style.color = '#7af486';
+    }else if(countLeft == countRight) {
+        score1.style.color = 'white';
+        score2.style.color = 'white';
+    }else{
+        score2.style.color = '#7af486';
+    }
 })
 
 twoPointLeftBtn.addEventListener('click', function() {
     countLeft += 2;
     score1.textContent = countLeft;
+    if(countLeft > countRight) {
+        score1.style.color = '#7af486';
+    }else if(countLeft == countRight) {
+        score1.style.color = 'white';
+        score2.style.color = 'white';
+    }else{
+        score2.style.color = '#7af486';
+    }
 })
 
 threePointLeftBtn.addEventListener('click', function() {
     countLeft += 3;
     score1.textContent = countLeft;
+    if(countLeft > countRight) {
+        score1.style.color = '#7af486';
+    }else if(countLeft == countRight) {
+        score1.style.color = 'white';
+        score2.style.color = 'white';
+    }else{
+        score2.style.color = '#7af486';
+    }
 })
 
 onePointRightBtn.addEventListener('click', function() {
     countRight += 1;
     score2.textContent = countRight;
+    if(countLeft < countRight) {
+        score2.style.color = '#7af486';
+    }else if(countLeft == countRight) {
+        score1.style.color = 'white';
+        score2.style.color = 'white';
+    }else{
+        score1.style.color = '#7af486';
+    }
 })
 
 twoPointRightBtn.addEventListener('click', function() {
     countRight += 2;
     score2.textContent = countRight;
+    if(countLeft < countRight) {
+        score2.style.color = '#7af486';
+    }else if(countLeft == countRight) {
+        score1.style.color = 'white';
+        score2.style.color = 'white';
+    }else{
+        score1.style.color = '#7af486';
+    }
 })
 
 threePointRightBtn.addEventListener('click', function() {
     countRight += 3;
     score2.textContent = countRight;
+    if(countLeft < countRight) {
+        score2.style.color = '#7af486';
+    }else if(countLeft == countRight) {
+        score1.style.color = 'white';
+        score2.style.color = 'white';
+    }else{
+        score1.style.color = '#7af486';
+    }
 })
 
 //Reset the counter
@@ -114,4 +162,6 @@ function resetScore() {
     countRight = 0;
     score1.textContent = 0;
     score2.textContent = 0;
+    score1.style.color = 'white';
+    score2.style.color = 'white';
 }
