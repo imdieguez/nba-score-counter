@@ -109,3 +109,34 @@ button {
     background-color: darkgray;
 
 }
+
+/* Responsive */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 3rem;
+    }
+    .teams > h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .team-select {
+        text-align: center;
+    }
+    .score-container {
+        flex-wrap: wrap;
+    }
+    
+    .buttons {
+        margin-bottom: 40px;
+    }
+    button {
+        font-size: 1.4rem;
+    }
+    #reset-btn {
+        margin-bottom: 10px;
+    }
+    .teams > img {
+        width: 60%;
+    }
+}
