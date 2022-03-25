@@ -45,37 +45,37 @@ visitorTeamList.addEventListener('change', function() {
 onePointLeftBtn.addEventListener('click', function() {
     countLeft += 1;
     score1.textContent = countLeft;
-    leftWinning()
+    checkWinning()
 })
 
 twoPointLeftBtn.addEventListener('click', function() {
     countLeft += 2;
     score1.textContent = countLeft;
-    leftWinning()
+    checkWinning()
 })
 
 threePointLeftBtn.addEventListener('click', function() {
     countLeft += 3;
     score1.textContent = countLeft;
-    leftWinning()
+    checkWinning()
 })
 
 onePointRightBtn.addEventListener('click', function() {
     countRight += 1;
     score2.textContent = countRight;
-    rightWinning()
+    checkWinning()
 })
 
 twoPointRightBtn.addEventListener('click', function() {
     countRight += 2;
     score2.textContent = countRight;
-    rightWinning()
+    checkWinning()
 })
 
 threePointRightBtn.addEventListener('click', function() {
     countRight += 3;
     score2.textContent = countRight;
-    rightWinning()
+    checkWinning()
 })
 
 //Reset the counter
@@ -94,7 +94,7 @@ function resetScore() {
     score2.style.color = 'white';
 }
 
-function leftWinning() {
+function checkWinning() {
     if(countLeft > countRight) {
         score1.style.color = '#7af486';
         score2.style.color = 'white'
@@ -104,19 +104,6 @@ function leftWinning() {
     }else{
         score2.style.color = '#7af486';
         score1.style.color = 'white'
-    }
-}
-
-function rightWinning() {
-    if(countLeft < countRight) {
-        score2.style.color = '#7af486';
-        score1.style.color = 'white';
-    }else if(countLeft == countRight) {
-        score1.style.color = 'white';
-        score2.style.color = 'white';
-    }else{
-        score1.style.color = '#7af486';
-        score2.style.color = 'white';
     }
 }
 
